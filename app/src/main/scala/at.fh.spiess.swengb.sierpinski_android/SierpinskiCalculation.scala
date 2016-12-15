@@ -47,6 +47,7 @@ class SierpinskiCalculation (var context: Context, val attrs: AttributeSet) exte
       val leftInnerLT : XY = (topLT._1 - newTriangleSize / 4, (topLT._2 + newTriangleHeight / 2).asInstanceOf[Float])
       val bottomLT : XY = (originTriangle.get("left").get._1, originTriangle.get("bottom").get._2)
       val rightInnerLT : XY = (topLT._1 + newTriangleSize / 4, (topLT._2 + newTriangleHeight / 2).asInstanceOf[Float])
+
       val bottomTT : XY = originTriangle.getOrElse("top", null)
       val leftInnerTT : XY = (bottomTT._1 - newTriangleSize / 4, (bottomTT._2 - newTriangleHeight / 2).asInstanceOf[Float])
       val leftOuterTT : XY = (originTriangle.get("left").get._1, (bottomTT._2 - newTriangleHeight).asInstanceOf[Float])
@@ -98,6 +99,6 @@ class SierpinskiCalculation (var context: Context, val attrs: AttributeSet) exte
 
     val firstTriangle = getFirstTriangle()
     draw(firstTriangle)
-    recursiveSierpinski(firstTriangle, 7)
+    recursiveSierpinski(firstTriangle,7)
   }
 }
